@@ -1,0 +1,60 @@
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Angularjs Examples</title>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="header">
+	<div class="container" ng-controller="titleCtrl">
+		<h1 class="brand">{{title}}</h1>
+	</div>
+</div>
+<div class="wrapper">
+	<div class="container">
+		<div ng-controller="mainCtrl">
+			
+				<ul class="form-group">
+					<li>
+						<label>Caption</label>
+						<input type="text" ng-model="list.captionInput" placeholder="What needs to be done?">
+					</li>
+					<li>
+						<label>Message</label>
+						<input type="text" ng-model="list.descriptionInput" placeholder="Enter your detailed message here">
+					</li>
+					<li>
+						<input type="submit" class="btn btn-create" ng-click="save()" value="Create">
+						<!-- <input type="submit" value="Add Task" /> -->
+						<button class="btn btn-cancel">Cancel</button>
+					</li>
+				</ul>
+			
+			<div class="search-section">
+				<label>Search</label>
+				<input type="text" ng-model="searchItem">
+			</div>
+			<div class="listed-item">
+				<ul>
+					<li ng-repeat="list in listedItems | filter:searchItem">
+						<div class="caption-section">
+							<h3>{{list.caption}}</h3><span>{{date | date:'dd-mm-yyyy @h:mma'}}</span>
+						</div>
+						<div class="description-section">
+							<div class="description">{{list.description}}</div>
+							<div class="action">Action</div>
+						</div>
+					</li>
+				</ul>
+			</div> 
+			
+		</div>
+	</div>
+</div>
+  	<!-- Latest compiled and minified JavaScript -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

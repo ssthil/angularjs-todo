@@ -1,0 +1,57 @@
+body,html{
+font:normal 13px arial;
+}
+body, ul, li, div{
+padding:0;
+margin:0;
+}
+ul li{
+list-style: none;
+}
+/*** wrapper ***/
+.wrapper{
+	width:1024px;
+	margin:0 auto;
+}
+.header{
+	background:#0B6E77;
+	color:#fff;
+	margin:0 0 15px 0;
+	width:100%;
+}
+.container{
+	width:960px;
+	padding:15px 10px;
+	margin:0 auto;
+}
+.brand{
+	padding: 0;
+	margin:0;
+}
+.form-group li{
+	display: block;
+	float: left;
+	width: 100%;
+	margin-bottom: 15px;
+}
+.form-group li > label{
+	width: 110px;
+	float: left;
+	font-size: 1.4em;
+	padding:7px 6px;
+}
+.form-group li > input[type=text]{
+	padding: 7px;
+	min-width: 60%;
+	float: left;
+}
+.btn{
+	padding:8px 16px;
+	display:inline-block;
+}
+.btn-create{
+margin-left: 123px;
+}
+.listed-item  ul > li{
+border:1px solid #ccc;
+}
