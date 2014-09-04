@@ -42,6 +42,8 @@ var myApp = angular.module('myApp',[]);
 		// Remove an item from scope
 		$scope.removeItem = function(index){
 			$scope.listedItems.splice(index, 1);
+			$scope.listContainer = false;
+			$scope.searchSection = false;
 		}
 		
 	
