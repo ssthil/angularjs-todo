@@ -5,13 +5,22 @@ var myApp = angular.module('myApp',[]);
 	});
 	// Main controller
 	myApp.controller('mainCtrl', function($scope){
+		//submit
+		$scope.submitItem = function(){
+			if($scope.todoForm.$valid){
+			
+			} else{
+				$scope.submitted =true;
+			}
+		}
 		$scope.date = new Date();
 		$scope.listedItems=[];
-		//$scope.listedItems = (localStorage.getItem('listedItems')!==null) ? JSON.parse($scope.saved) : [ 
-		//{caption: 'Learn AngularJS', description: 'this is first'}, 
-		//{caption: 'Build an Angular app', description: 'this is last'} ];
-		$scope.save = function(){
-		//if($scope.captionInput !='' && $scope.descriptionInput !=''){
+		//Search
+		$scope.searchSection = false;
+		// Add new item
+		$scope.listContainer = false;
+		$scope.saveItem = function(){
+	
 		var newCaption = $scope.list.captionInput.trim();
 		var newDescription = $scope.list.descriptionInput.trim();
 			if (!newCaption.length && !newDescription.length) {
@@ -25,7 +34,16 @@ var myApp = angular.module('myApp',[]);
 			// Clear input fields after push
 			$scope.list.captionInput = "";
 			$scope.list.descriptionInput ="";
+			$scope.listContainer = true;
+			$scope.searchSection = true;
+		}
+		//ng-show
+		
+		// Remove an item from scope
+		$scope.removeItem = function(index){
+			$scope.listedItems.splice(index, 1);
 		}
 		
+	
 	});
 
